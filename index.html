@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Relief Corps</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            color: #333;
+        }
+
+        header {
+            background-color: #FF6B00;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            height: 40px;
+            margin-right: 20px;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        header nav a:hover {
+            transform: scale(1.1);
+            color: #FFD700;
+        }
+
+        .hero {
+            position: relative;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            animation: fadeEffect 3s infinite;
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            font-size: 2rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .card {
+            width: 30%;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .content-section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .content-section img {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px 0;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .footer {
+            background-color: #FF6B00;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .global-impact {
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .global-impact h2 {
+            font-size: 2rem;
+            color: #FF6B00;
+        }
+
+        .global-impact p {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .goal {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        .reached {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #FF6B00;
+        }
+
+        button:hover, a:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo1.png" alt="Logo">
+        <nav>
+            <a href="#">Gift Catalog</a>
+            <a href="#">About Us</a>
+            <a href="#">Our Work</a>
+            <a href="#">Ways to Help</a>
+            <a href="#">News & Stories</a>
+            <a href="#">Partnerships</a>
+        </nav>
+    </header>
+
+    <div class="hero" id="hero">
+        <div class="hero-text">
+            How We Aid in Philippines Typhoons
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Our Work</h2>
+        <div class="cards-container">
+            <div class="card">
+                <img src="image1.png" alt="Relief Packs">
+                <h3 class="card-title">Relief Packs</h3>
+            </div>
+            <div class="card">
+                <img src="image2.png" alt="Hardworking Teams">
+                <h3 class="card-title">Hardworking Teams</h3>
+            </div>
+            <div class="card">
+                <img src="image3.png" alt="Community Support">
+                <h3 class="card-title">Community Support</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="global-impact">
+        <h2>Global Impact</h2>
+        <p class="goal">Goal: 100,000 PHP</p>
+        <p class="reached">Reached: 24,000 PHP</p>
+        <p>Working tirelessly to provide support in the Philippines after Typhoon Man-yi.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Our Vision</h2>
+        <p>We envision a world where disaster-stricken communities can recover swiftly with the aid of collective global efforts.</p>
+    </div>
+
+    <footer class="footer">
+        <div>
+            <img src="logo1.png" alt="Logo">
+        </div>
+        <div>
+            <p>&copy; 2024 International Relief Corps. All rights reserved.</p>
+            <p>Registered Trademark</p>
+        </div>
+        <div>
+            <img src="logo1.png" alt="Logo">
+        </div>
+    </footer>
+
+    <script>
+        const images = ['photo1.png', 'photo2.png', 'photo3.png'];
+        let currentIndex = 0;
+
+        const hero = document.getElementById('hero');
+        hero.style.backgroundImage = `url('${images[currentIndex]}')`;
+
+        function switchImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            hero.style.backgroundImage = `url('${images[currentIndex]}')`;
+        }
+
+        setInterval(switchImage, 3000); // Change image every 3 seconds
+    </script>
+</body>
+</html>
