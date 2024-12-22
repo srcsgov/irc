@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A: Defence Initiative</title>
+    <style>
+        body {
+            background-color: white;
+            color: #1E2134;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 18px; /* Increased base font size */
+        }
+        h1, h2 {
+            text-align: center;
+            margin-top: 30px;
+            font-weight: bolder; /* Increased font weight */
+            color: #1E2134;
+            font-size: 3em; /* Increased heading size */
+        }
+        p, ul {
+            font-size: 1.2em; /* Increased paragraph size */
+            font-weight: bold; /* Bold text for paragraphs and lists */
+        }
+        nav {
+            background-color: #1E2134;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            font-size: 1.5em; /* Increased nav link font size */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #FF5733;
+        }
+        .container {
+            padding: 30px;
+            text-align: center;
+        }
+        .donate-button {
+            background-color: #FF5733;
+            color: white;
+            font-size: 1.5em; /* Increased button font size */
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.3s ease;
+            width: 200px;
+        }
+        .donate-button:hover {
+            transform: scale(1.1);
+        }
+        .donate-option {
+            margin: 10px;
+            padding: 20px;
+            font-size: 1.5em; /* Increased donate option font size */
+            border: 1px solid #1E2134;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 250px; /* Wider buttons */
+            margin: 10px auto;
+        }
+        .donate-option:hover {
+            background-color: #FF5733;
+            color: white;
+        }
+        .qr-code img {
+            width: 200px; /* Increased QR code size */
+            height: 200px;
+        }
+        .progress-bar {
+            width: 80%;
+            background-color: #ddd;
+            margin: 20px auto;
+            height: 30px; /* Increased height of progress bar */
+            border-radius: 10px;
+        }
+        .progress {
+            height: 100%;
+            background-color: #FF5733;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #1E2134;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            font-size: 1.2em; /* Larger footer text */
+        }
+
+        .break-line {
+            width: 100%;
+            height: 5px;
+            background-color: #1E2134;
+            margin: 30px auto;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            .donate-button, .donate-option {
+                width: 80%;
+                font-size: 1.2em; /* Slightly smaller font size for mobile */
+            }
+            .donate-option {
+                width: 90%; /* Adjusted width on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>A: Defence Initiative</h1>
+        <nav>
+            <a href="#what-we-do">What We Do</a>
+            <a href="#donate">Donate</a>
+            <a href="#join-us">Join Us</a>
+            <a href="store.html">Store</a>
+        </nav>
+    </header>
+
+    <section id="what-we-do" class="container">
+        <h2>What We Do</h2>
+        <p>At A: Defence Initiative, we are committed to making a lasting difference in Mindanao, a region that has been severely affected by conflict, poverty, and insecurity. We focus on counterterrorism efforts, providing humanitarian aid, and working toward improving the overall security and stability of the area. Our vision is to build safer communities, empower local people, and address the root causes of violence and poverty.</p>
+        
+        <p>Our work includes:</p>
+        <ul>
+            <li><strong>Counterterrorism Operations:</strong> We support national and local law enforcement agencies in combating terrorism and insurgency in the region, ensuring that security forces are equipped and trained to protect innocent lives.</li>
+            <li><strong>Humanitarian Aid and Relief:</strong> We provide essential services, such as food, medical care, and shelter, to communities that have been displaced by violence. Our efforts help rebuild lives and restore hope to those who have been affected by conflict.</li>
+            <li><strong>Community Empowerment:</strong> We work closely with local communities to strengthen their resilience against extremism and promote social cohesion. This includes educational programs, vocational training, and economic development initiatives that foster sustainable growth and independence.</li>
+        </ul>
+        
+        <p>Our mission is driven by the belief that security, peace, and prosperity can be achieved when communities work together with their governments and international partners to address the challenges they face.</p>
+    </section>
+
+    <div class="break-line"></div>
+
+    <section id="donate" class="container">
+        <h2>Donate to Help</h2>
+        <p>Your contribution plays a vital role in supporting our efforts to bring lasting peace and development to Mindanao. The funds we raise are directly allocated to programs that provide aid to those who need it the most: from supplying food and water to displaced families to funding essential counterterrorism operations.</p>
+        
+        <p>With your donation, you are helping to:</p>
+        <ul>
+            <li><strong>Provide emergency relief:</strong> Offer critical support to families affected by natural disasters and conflict.</li>
+            <li><strong>Fund security operations:</strong> Enable us to equip and train local law enforcement and military personnel to keep the region safe.</li>
+            <li><strong>Build community resilience:</strong> Help us implement programs that provide education, healthcare, and livelihood opportunities for marginalized communities.</li>
+        </ul>
+        
+        <p>Donating is simple. You can choose from the following amounts:</p>
+        <div class="donate-options">
+            <div class="donate-option" onclick="location.href='donate.php?amount=100'">Donate 100 PHP</div>
+            <div class="donate-option" onclick="location.href='donate.php?amount=500'">Donate 500 PHP</div>
+            <div class="donate-option" onclick="location.href='donate.php?amount=1000'">Donate 1000 PHP</div>
+        </div>
+
+        <h3>Why Donate?</h3>
+        <p>Each donation, no matter how small, directly contributes to the ongoing work of the A: Defence Initiative. Your generosity is an investment in the future of Mindanao — it helps secure lives, restore dignity, and offer a better future for generations to come. The people of Mindanao need your support to overcome the challenges they face.</p>
+        
+        <div class="qr-code">
+            <p>Scan to Donate</p>
+            <img src="qr.png" alt="QR Code">
+        </div>
+
+        <h3>Current Donation Goal</h3>
+        <div class="progress-bar">
+            <div class="progress" style="width: 34%;"></div>
+        </div>
+        <p>34,000 PHP out of 100,000 PHP goal reached!</p>
+    </section>
+
+    <div class="break-line"></div>
+
+    <section id="join-us" class="container">
+        <h2>How to Join Us</h2>
+        <p>If you share our vision of a peaceful, secure, and prosperous Mindanao, we invite you to join us in our mission. We operate in various regions across the Philippines, and our work is not limited to one specific area. We value flexibility, commitment, and a passion for helping others, and we're always looking for dedicated individuals to join our cause.</p>
+        
+        <p>There are many ways you can contribute to our efforts:</p>
+        
+        <ul>
+            <li><strong>Volunteer:</strong> We welcome passionate volunteers to assist with our programs, outreach, and community initiatives. Whether you have experience in humanitarian aid, security, or other fields, there's a place for you in our team.</li>
+            <li><strong>Apply for Open Roles:</strong> We frequently have positions available, including roles in field operations, administrative support, communications, and more. If you're interested in a specific role or want to explore opportunities with us, simply send us your resume and a brief cover letter detailing the role you'd like to apply for. We will review your application and get in touch with you if there's a suitable match.</li>
+            <li><strong>Inquire About Open Roles:</strong> If you're unsure about what roles we currently have available, feel free to reach out to us to inquire. We are always open to discussing potential opportunities based on your skills and interests.</li>
+        </ul>
+
+        <p>To get involved, please send your resume and the role you're interested in (or inquire about open roles) to: <a href="mailto:a.defenceinitiative@gmail.com">a.defenceinitiative@gmail.com</a></p>
+
+        <p>We believe that with the right team, we can make a significant impact. Join us in our mission to build a safer, more secure Philippines, and help us create a brighter future for all.</p>
+    </section>
+
+    <div class="break-line"></div>
+
+    <footer>
+        <p>&copy; 2024 A: Defence Initiative. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
