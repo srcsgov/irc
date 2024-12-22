@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - A: Defence Initiative</title>
+    <style>
+        body {
+            background-color: white;
+            color: #1E2134;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            font-weight: bolder;
+            color: #1E2134;
+            font-size: 3em;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+        }
+        .product-info {
+            width: 50%;
+            padding-right: 30px;
+        }
+        .product {
+            width: 100%;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .product-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #1E2134;
+        }
+        .product-price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #FF5733;
+            margin-top: 10px;
+        }
+        .size-picker {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .size-box {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border: 2px solid #1E2134;
+            border-radius: 5px;
+            width: 60px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .size-box:hover {
+            background-color: #1E2134;
+            color: white;
+        }
+        .size-box.selected {
+            background-color: #1E2134;
+            color: white;
+        }
+        .product-info select {
+            font-size: 1.2em;
+            padding: 10px;
+            border: 1px solid #1E2134;
+            background-color: white;
+            width: 100%;
+            max-width: 250px;
+            margin-top: 20px;
+        }
+        .pay-button {
+            background-color: #FF5733;
+            color: white;
+            font-size: 1.5em;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+        .pay-button:hover {
+            background-color: #1E2134;
+        }
+
+        /* Product Info Dropdown */
+        .dropdown {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #1E2134;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            margin-top: 10px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #1E2134;
+            border-radius: 5px;
+            animation: none;
+            opacity: 0;
+            transition: opacity 0.3s ease, max-height 0.3s ease;
+            max-height: 0;
+        }
+        .dropdown.active .dropdown-content {
+            display: block;
+            opacity: 1;
+            max-height: 300px; /* Adjust based on content */
+            animation: slideDown 0.3s ease-out forwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                max-height: 0;
+                opacity: 0;
+            }
+            to {
+                max-height: 300px; /* Adjust based on content */
+                opacity: 1;
+            }
+        }
+
+        .instructions {
+            display: none;
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-top: 30px;
+            border: 1px solid #1E2134;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .close-button {
+            background-color: #FF5733;
+            color: white;
+            font-size: 1em;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+        .close-button:hover {
+            background-color: #1E2134;
+        }
+
+        footer {
+            background-color: #1E2134;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            font-size: 1.2em;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .product-info {
+                width: 80%;
+                padding-right: 0;
+            }
+            .product img {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Payment - A: Defence Initiative</h1>
+    </header>
+
+    <section class="container">
+        <div class="product-info">
+            <!-- Product Info -->
+            <div class="product">
+                <img src="product1.jpg" alt="T-Shirt - Support Mindanao">
+                <div class="product-title">T-Shirt - Support Mindanao</div>
+                <div class="product-price">500 PHP</div>
+
+                <!-- Size Picker -->
+                <div class="size-picker">
+                    <div class="size-box" onclick="selectSize('S')">S</div>
+                    <div class="size-box" onclick="selectSize('M')">M</div>
+                    <div class="size-box" onclick="selectSize('L')">L</div>
+                    <div class="size-box" onclick="selectSize('XL')">XL</div>
+                </div>
+
+                <!-- Product Info Dropdown (More details) -->
+                <div class="dropdown" onclick="toggleDropdown(this)">
+                    Product Info
+                    <div class="dropdown-content">
+                        <p><strong>Material:</strong> 100% Cotton</p>
+                        <p><strong>Care Instructions:</strong> Machine wash cold, tumble dry low</p>
+                        <p><strong>Shipping Info:</strong> Ships within 3-5 business days</p>
+                    </div>
+                </div>
+
+                <!-- Size Info Dropdown (More details) -->
+                <div class="dropdown" onclick="toggleDropdown(this)">
+                    Size Information
+                    <div class="dropdown-content">
+                        <p><strong>S:</strong> 34-36 inches chest</p>
+                        <p><strong>M:</strong> 38-40 inches chest</p>
+                        <p><strong>L:</strong> 42-44 inches chest</p>
+                        <p><strong>XL:</strong> 46-48 inches chest</p>
+                    </div>
+                </div>
+
+                <!-- Delivery Info Dropdown (More details) -->
+                <div class="dropdown" onclick="toggleDropdown(this)">
+                    Delivery Information
+                    <div class="dropdown-content">
+                        <p><strong>Standard Delivery:</strong> 3-5 business days</p>
+                        <p><strong>Expedited Delivery:</strong> 1-2 business days</p>
+                        <p><strong>Shipping Costs:</strong> Free on orders over 1000 PHP</p>
+                    </div>
+                </div>
+
+                <!-- Pay Button -->
+                <button class="pay-button" onclick="showInstructions()">Pay Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructions (hidden by default) -->
+    <div class="instructions" id="instructions">
+        <p>Thank you for your purchase! To complete the payment process, take a screenshot of this page and send it to us on Instagram.</p>
+        <p>Send the screenshot to our Instagram account: <strong>@YourInstagramHandle</strong></p>
+        <button class="close-button" onclick="closeInstructions()">Close</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 A: Defence Initiative. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to select size
+        function selectSize(size) {
+            // Remove "selected" class from all size boxes
+            const sizeBoxes = document.querySelectorAll('.size-box');
+            sizeBoxes.forEach(box => box.classList.remove('selected'));
+
+            // Add "selected" class to clicked size box
+            const selectedSizeBox = document.querySelector(`.size-box:nth-child(${['S', 'M', 'L', 'XL'].indexOf(size) + 1})`);
+            selectedSizeBox.classList.add('selected');
+        }
+
+        // Toggle Product Info, Size Info, and Delivery Info Dropdowns
+        function toggleDropdown(element) {
+            const dropdown = element.querySelector('.dropdown-content');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            element.classList.toggle('active');
+        }
+
+        // Function to show the instructions
+        function showInstructions() {
+            document.getElementById('instructions').style.display = 'block';
+        }
+
+        // Function to close the instructions
+        function closeInstructions() {
+            document.getElementById('instructions').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>

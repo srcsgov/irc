@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - A: Defence Initiative</title>
+    <style>
+        body {
+            background-color: white;
+            color: #1E2134;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            font-weight: bolder;
+            color: #1E2134;
+            font-size: 3em;
+        }
+        .container {
+            padding: 30px;
+            text-align: center;
+        }
+        .product {
+            display: inline-block;
+            width: 250px;
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #1E2134;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            background-color: #f0f0f0;
+        }
+        .product img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        .product-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #1E2134;
+        }
+        .product-price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #FF5733;
+            margin-top: 10px;
+        }
+        .add-to-cart {
+            background-color: #FF5733;
+            color: white;
+            font-size: 1em;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+        .add-to-cart:hover {
+            background-color: #1E2134;
+        }
+
+        footer {
+            background-color: #1E2134;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            font-size: 1.2em;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .product {
+                width: 80%;
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>A: Defence Initiative Store</h1>
+    </header>
+
+    <section class="container">
+        <h2>Our Products</h2>
+
+        <!-- Product 1 -->
+        <div class="product">
+            <img src="image1.png" alt="T-Shirt - Support Mindanao">
+            <div class="product-title">T-Shirt - Support Mindanao</div>
+            <div class="product-price">500 PHP</div>
+            <!-- Link wrapped around the button to go to product1.html -->
+            <a href="product1.html">
+                <button class="add-to-cart">Add to Cart</button>
+            </a>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+            <img src="product2.jpg" alt="Cap - Peace and Security">
+            <div class="product-title">Cap - Peace and Security</div>
+            <div class="product-price">350 PHP</div>
+            <!-- Link wrapped around the button to go to product2.html -->
+            <a href="product2.html">
+                <button class="add-to-cart">Add to Cart</button>
+            </a>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product">
+            <img src="product3.jpg" alt="Mug - Support Our Heroes">
+            <div class="product-title">Mug - Support Our Heroes</div>
+            <div class="product-price">250 PHP</div>
+            <!-- Link wrapped around the button to go to product3.html -->
+            <a href="product3.html">
+                <button class="add-to-cart">Add to Cart</button>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 A: Defence Initiative. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
