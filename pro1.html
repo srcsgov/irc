@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A | DI - Product Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #FFFFFF;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: #1E2134;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            position: relative;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            transform: scale(1.1);
+            color: #FFD700;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s, left 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .container {
+            display: flex;
+            padding: 40px;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .product-image {
+            width: 40%; /* Adjusted width */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-image img {
+            width: 386px;  /* Forced width */
+            height: 605px; /* Forced height */
+            object-fit: cover;
+            border-radius: 8px;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .arrow-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 2em;  /* Adjusted size */
+            border-radius: 50%;
+            z-index: 10; /* Ensure arrows are on top */
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+        .product-info {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .in-stock {
+            font-size: 1.2em;
+            color: neon green;
+            margin-bottom: 20px;
+        }
+
+        .size-options {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .size-button {
+            padding: 10px 20px;
+            border: 2px solid #333;
+            background: white;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .size-button:hover {
+            background-color: #e0e0e0;
+            border-color: #007bff;
+        }
+
+        .size-button.selected {
+            background-color: #007bff;
+            color: white;
+            border-color: #0056b3;
+        }
+
+        .proceed-button {
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .proceed-button:hover {
+            background-color: #0056b3;
+        }
+
+        .dropdown-section {
+            margin-top: 30px;
+        }
+
+        .dropdown-header {
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s;
+        }
+
+        .dropdown-header:hover {
+            border-bottom: 2px solid #007bff;
+        }
+
+        .dropdown-content {
+            display: none;
+            font-size: 1em;
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .dropdown-content.open {
+            display: block;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            text-align: center;
+        }
+
+        .modal .close-btn {
+            cursor: pointer;
+            color: #333;
+            background: transparent;
+            border: none;
+            font-size: 1.5em;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .modal h3 {
+            margin-bottom: 20px;
+        }
+
+        .close-box-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .close-box-btn:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background: #1E2134;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        footer .left,
+        footer .right {
+            display: flex;
+            gap: 10px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        footer img {
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="A | DI Logo">
+    <nav>
+        <a href="#who-we-are">Who We Are</a>
+        <a href="#campaigns">Campaigns</a>
+        <a href="#get-involved">Get Involved</a>
+        <a href="#news">News</a>
+        <a href="#shop">Shop</a>
+        <a href="#donate">Donate</a>
+    </nav>
+</header>
+
+<!-- Product Section -->
+<div class="container">
+    <div class="product-image">
+        <img src="item1.png" alt="Product Image" id="product-img">
+        <button class="arrow-button arrow-left" id="prev-btn">&lt;</button> <!-- Left arrow -->
+        <button class="arrow-button arrow-right" id="next-btn">&gt;</button> <!-- Right arrow -->
+    </div>
+    <div class="product-info">
+        <div class="product-title">Product Name</div>
+        <div class="in-stock">In Stock</div>
+
+        <div class="size-options">
+            <button class="size-button" id="size-s">S</button>
+            <button class="size-button" id="size-m">M</button>
+            <button class="size-button" id="size-l">L</button>
+            <button class="size-button" id="size-xl">XL</button>
+        </div>
+
+        <button class="proceed-button" id="proceed-btn">Proceed to Payment</button>
+
+        <div class="dropdown-section">
+            <div class="dropdown-header" id="product-info-header">Product Information</div>
+            <div class="dropdown-content" id="product-info-content">
+                <p>Detailed description of the product...</p>
+            </div>
+
+            <div class="dropdown-header" id="care-info-header">Care Information</div>
+            <div class="dropdown-content" id="care-info-content">
+                <p>Instructions for care...</p>
+            </div>
+
+            <div class="dropdown-header" id="size-info-header">Size Information</div>
+            <div class="dropdown-content" id="size-info-content">
+                <p>Size chart and fit guide...</p>
+            </div>
+
+            <div class="dropdown-header" id="shipping-header">Shipping & Return</div>
+            <div class="dropdown-content" id="shipping-content">
+                <p>Shipping and return policy...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h3>Screenshot this order and send on our Insta</h3>
+        <button class="close-box-btn" id="close-btn">Close</button>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="left">
+        <img src="logo.png" alt="Logo">
+        <a href="#about">About Us</a>
+        <a href="#locations">Locations</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#education">Education</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#contact">Contact</a>
+        <a href="#privacy">Privacy</a>
+    </div>
+    <div class="right">
+        <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+        <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+    </div>
+</footer>
+
+<script>
+    const prevButton = document.getElementById('prev-btn');
+    const nextButton = document.getElementById('next-btn');
+    const productImage = document.getElementById('product-img');
+    
+    let currentImage = 1;
+
+    const images = ['stuff.png', 'image2.png']; // Image paths for the carousel
+
+    prevButton.addEventListener('click', () => {
+        currentImage = (currentImage === 0) ? images.length - 1 : currentImage - 1;
+        productImage.src = images[currentImage];
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentImage = (currentImage === images.length - 1) ? 0 : currentImage + 1;
+        productImage.src = images[currentImage];
+    });
+
+    // Dropdown functionality
+    document.querySelectorAll('.dropdown-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const content = header.nextElementSibling;
+            content.classList.toggle('open');
+        });
+    });
+
+    // Modal functionality
+    document.getElementById('proceed-btn').addEventListener('click', () => {
+        document.getElementById('modal').style.display = 'flex';
+    });
+
+    document.getElementById('close-btn').addEventListener('click', () => {
+        document.getElementById('modal').style.display = 'none';
+    });
+
+    // Size button functionality
+    document.querySelectorAll('.size-button').forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelectorAll('.size-button').forEach(b => b.classList.remove('selected'));
+            button.classList.add('selected');
+        });
+    });
+</script>
+
+</body>
+</html>

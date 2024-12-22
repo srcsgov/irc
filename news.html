@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A | DI - A. Defence Initiative</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #FFFFFF;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: #1E2134;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            position: relative;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            transform: scale(1.1);
+            color: #FFD700;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s, left 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        section {
+            padding: 40px 20px;
+        }
+
+        .who-we-are {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .who-we-are .item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .who-we-are .item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .who-we-are .item .text {
+            flex: 1;
+        }
+
+        .who-we-are .item .text h3 {
+            margin: 0 0 10px;
+            font-size: 1.2em;
+            color: #1E2134;
+        }
+
+        .who-we-are .item .text p {
+            margin: 0;
+            font-size: 1em;
+            color: #555;
+        }
+
+        .news-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .news-section .item {
+            width: calc(33.333% - 20px);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .news-section .item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .news-section .item .text {
+            padding: 15px;
+        }
+
+        .news-section .item .text h3 {
+            margin: 0 0 10px;
+            font-size: 1.1em;
+            color: #1E2134;
+        }
+
+        .news-section .item .text p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        footer {
+            background: #1E2134;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer .left, footer .right {
+            display: flex;
+            gap: 10px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        footer img {
+            height: 40px;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="A | DI Logo">
+    <nav>
+        <a href="us.html">Who We Are</a>
+        <a href="campaign.html">Campaigns</a>
+        <a href="joinsus.html">Get Involved</a>
+        <a href="news.html">News</a>
+        <a href="store.html">Shop</a>
+        <a href="doantepage.html">Donate</a>
+    </nav>
+</header>
+
+
+<section>
+    <h2>News</h2>
+    <div class="news-section">
+        <div class="item">
+            <img src="nilnews.png" alt="News 1">
+            <div class="text">
+                <h3>No news yet</h3>
+                <p>Coming soon...</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="nilnews.png" alt="News 2">
+            <div class="text">
+                <h3>No news yet</h3>
+                <p>Coming soon...</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="nilnews.png" alt="News 3">
+            <div class="text">
+                <h3>No news yet</h3>
+                <p>Coming soon...</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="nilnews.png" alt="News 4">
+            <div class="text">
+                <h3>No news yet</h3>
+                <p>Coming soon...</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="nilnews.png" alt="News 5">
+            <div class="text">
+                <h3>No news yet</h3>
+                <p>Coming soon...</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="nilnews.png" alt="News 6">
+            <div class="text">
+                <h3>No news yet</h3>
+                <p>Coming soon...</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="left">
+        <img src="logo.png" alt="Logo">
+        <a href="that.html">About Us</a>
+        <a href="that.html">Locations</a>
+        <a href="that.html">Leadership</a>
+        <a href="that.html">Education</a>
+        <a href="that.html">FAQs</a>
+        <a href="that.html">Contact</a>
+        <a href="that.html">Privacy</a>
+    </div>
+    <div class="right">
+        <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+        <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+    </div>
+</footer>
+
+</body>
+</html>
